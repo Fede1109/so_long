@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 17:14:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/17 15:01:45 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/18 14:04:30 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,21 @@ void check_arguments(int argc, char *argv)
         if ((ft_strncmp(".ber", argv + (len - 4), 4)))
         {
             //TODO: verificar que sea archivo .ber
-            ft_error("File must be .ber");    
+            ft_error(1);    
         }
     }
 }
 //TODO: Hacer función error
 
-void    ft_error(char *err)
+void    ft_error(int n)
 {
-    printf("%s%s\n", "\x1B[31m" ,err);
-    exit(EXIT_FAILURE);
+    if (n == 1)
+        ft_printf("%sError\nNo such file or directory! \n", COLOR_RED);
+    else if (n == 2)
+		ft_printf("%sError\n Usage: ./so_long <filename>.ber \n", COLOR_RED);
+    else if (n == 3)
+        ft_printf("%sError\n Try create one valid map! \n", COLOR_RED);
+    exit(n);
 }
 
 void    end_game()
