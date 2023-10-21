@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:42:19 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/19 17:14:16 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/21 18:22:12 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include "../libft/libft.h"
 # include "../libft/ft_printf.h"
 # include "../libft/get_next_line.h"
-# include "../minilibx_opengl_20191021/mlx.h"
+# include "../minilibx_opengl/mlx.h"
 # define COLOR_RED "\033[0;31m"
 
 typedef struct s_map
@@ -30,8 +30,8 @@ typedef struct s_map
     int     exit;
     int     player;
     char    **map;
-    int     map_width;
-    int     map_height;
+    size_t     map_width;
+    size_t     map_height;
     int     init_pos;
 
     
