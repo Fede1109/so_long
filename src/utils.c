@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 17:14:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/18 14:04:30 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/21 18:21:03 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,41 @@ void check_arguments(int argc, char *argv)
     
     if (argc != 2)
     {
-        //TODO: Mostrar mensaje de error
-        ft_error("Only two arguments please.");
+        //*: Mostrar mensaje de error
+        ft_error(8);
     }
     else
     {
-        len = strlen(argv);
+        len = ft_strlen(argv);
+        if(len < 4)
+            ft_error(1);
         if ((ft_strncmp(".ber", argv + (len - 4), 4)))
         {
-            //TODO: verificar que sea archivo .ber
+            //*: verificar que sea archivo .ber
             ft_error(1);    
         }
     }
 }
-//TODO: Hacer función error
+//TODO: Acabar función error
 
 void    ft_error(int n)
 {
     if (n == 1)
         ft_printf("%sError\nNo such file or directory! \n", COLOR_RED);
     else if (n == 2)
-		ft_printf("%sError\n Usage: ./so_long <filename>.ber \n", COLOR_RED);
+		ft_printf("%sError\nUsage: ./so_long <filename>.ber \n", COLOR_RED);
     else if (n == 3)
-        ft_printf("%sError\n Try create one valid map! \n", COLOR_RED);
+        ft_printf("%sError\nTry create one valid map! \n", COLOR_RED);
+    else if (n == 4)
+        ft_printf("%sError\nMap has invalid characters! \n", COLOR_RED);
+    else if (n == 5)
+        ft_printf("%sError\nMap is not a rectangle! \n", COLOR_RED);
+    else if (n == 6)
+        ft_printf("%sError\nMap is not surrounded by walls! \n", COLOR_RED);
+    else if (n == 7)
+        ft_printf("%sError\nKey data in map is missing or incorrect \n", COLOR_RED);
+    else if (n == 8)
+        ft_printf("%sError\nOnly two arguments please \n", COLOR_RED);
     exit(n);
 }
 
