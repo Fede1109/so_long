@@ -6,13 +6,13 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 14:37:31 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/17 12:22:37 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/18 17:57:42 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	char	*str;
 	int		i;
@@ -67,7 +67,7 @@ char	*ft_extract_line(char *str)
 	return (ret);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr_gnl(const char *s, int c)
 {
 	int	i;
 
@@ -85,7 +85,7 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen_gnl(const char *str)
 {
 	size_t	counter;
 
