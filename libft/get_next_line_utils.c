@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 14:37:31 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/18 17:57:42 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/21 17:44:22 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strjoin_gnl(char *s1, char *s2)
 			return (NULL);
 		s1[0] = '\0';
 	}
-	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	str = malloc(sizeof(char) * (ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1));
 	if (str)
 	{
 		while (s1[++i] != '\0')
@@ -112,7 +112,7 @@ char	*ft_new_static(char *aux)
 		free(aux);
 		return (NULL);
 	}
-	ret = malloc(sizeof(char) * (ft_strlen(aux) - i + 1));
+	ret = malloc(sizeof(char) * (ft_strlen_gnl(aux) - i + 1));
 	if (!ret)
 	{
 		free(aux);

@@ -6,7 +6,7 @@
 #    By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/19 10:02:39 by fdiaz-gu          #+#    #+#              #
-#    Updated: 2023/10/17 15:00:51 by fdiaz-gu         ###   ########.fr        #
+#    Updated: 2023/10/21 16:39:44 by fdiaz-gu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = ft_atoi.c ft_isprint.c  ft_putchar_fd.c ft_strjoin.c ft_strrchr.c ft_pute
 ft_memchr.c ft_putnbr_fd.c ft_strlcpy.c ft_itoa.c ft_substr.c ft_calloc.c  ft_memcmp.c ft_putstr_fd.c ft_tolower.c ft_isalnum.c  ft_split.c \
 ft_strlen.c ft_toupper.c ft_isalpha.c  ft_memcpy.c ft_strchr.c ft_strmapi.c ft_isascii.c ft_memmove.c ft_strdup.c \
 ft_strncmp.c ft_isdigit.c  ft_memset.c ft_striteri.c ft_strnstr.c ft_printf.c ft_check_type.c ft_print_char.c ft_print_d_i.c ft_print_string.c ft_print_x.c \
-ft_print_unsigned.c ft_print_p.c ft_set_type_x.c\
+ft_print_unsigned.c ft_print_p.c ft_set_type_x.c get_next_line.c get_next_line_utils.c\
 
 BONUS = ft_lstnew_bonus.c ft_lstclear_bonus.c ft_lstadd_back_bonus.c ft_lstsize_bonus.c ft_lstadd_front_bonus.c ft_lstlast_bonus.c \
         ft_lstiter_bonus.c ft_lstdelone_bonus.c ft_lstmap_bonus.c
