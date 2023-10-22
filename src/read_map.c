@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:54:59 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/21 18:21:21 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/22 15:25:31 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	read_map(char *argv, t_map *map)
 	fd = open(argv, O_RDONLY);
 	if (!fd || fd < 0)
 		ft_error(1);
+	map_str = ft_strdup("");
 	while (1)
 	{
 		aux_str = get_next_line(fd);

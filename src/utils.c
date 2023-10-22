@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 17:14:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/21 18:21:03 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/22 15:21:42 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void check_arguments(int argc, char *argv)
         if ((ft_strncmp(".ber", argv + (len - 4), 4)))
         {
             //*: verificar que sea archivo .ber
-            ft_error(1);    
+            ft_error(1);            
         }
     }
 }

@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/21 18:22:24 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/22 15:37:53 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int	check_char_map(t_map *map)
 		row = 0;
 		while (aux_map[column][row])
 		{
-			if (aux_map[column][row] != '0' || aux_map[column][row] != '1' ||
-				aux_map[column][row] != 'C' || aux_map[column][row] != 'E' ||
+			if (aux_map[column][row] != '0' && aux_map[column][row] != '1' &&
+				aux_map[column][row] != 'C' && aux_map[column][row] != 'E' &&
 				aux_map[column][row] != 'P')
 				ft_error(4);
 			row++;
@@ -81,6 +81,7 @@ void	check_elements_number(t_map *map)
 
 	column = 0;
 	aux_map = map->map;
+	map->exit = 0;
 	while (aux_map[column])
 	{
 		row = 0;
@@ -88,8 +89,8 @@ void	check_elements_number(t_map *map)
 		{
 			if (aux_map[column][row] == 'C')
 				map->coins++;
-			if (aux_map[column][row] == 'E')
-				map->exit++;
+			if (aux_map[column][row] == 'E')			
+				map->exit++;			
 			if (aux_map[column][row] == 'P')
 				map->init_pos++;
 			row++;
@@ -106,7 +107,7 @@ int	check_border(t_map *map)
 	int		column;
 	int		row;
 	char	**aux_map;
-
+	
 	column = 0;
 	aux_map = map->map;
 	while (aux_map[column])
