@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:54:59 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/22 15:25:31 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/22 19:56:28 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	read_map(char *argv, t_map *map)
 		free(aux_str);
 	}
 	map->map = ft_split(map_str, '\n');
+	map->map_copy = ft_split(map_str, '\n');
 	free(map_str);
 }
 

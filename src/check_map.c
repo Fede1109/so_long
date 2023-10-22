@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/22 15:37:53 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/22 20:16:43 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,4 +125,11 @@ int	check_border(t_map *map)
 		column++;
 	}
 	return (1);
+}
+
+void	check_path(t_map *map)
+{
+	int	player;
+	int	exit;
+
 }
