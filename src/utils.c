@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 17:14:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/22 19:36:18 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/23 13:05:14 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,10 @@ void    ft_error(int n)
         ft_printf("%sError\nKey data in map is missing or incorrect \n", COLOR_RED);
     else if (n == 8)
         ft_printf("%sError\nTwo arguments please \n", COLOR_RED);
-    else if (n == 8)
+    else if (n == 9)
         ft_printf("%sError\nMap has not a valid path\n", COLOR_RED);
+    else if (n == 10)
+        ft_printf("%sError\nFailed to open the image.\n", COLOR_RED);
     exit(n);
 }
 

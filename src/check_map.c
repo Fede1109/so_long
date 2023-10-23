@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/22 20:16:43 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:12:31 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,13 +92,19 @@ void	check_elements_number(t_map *map)
 			if (aux_map[column][row] == 'E')			
 				map->exit++;			
 			if (aux_map[column][row] == 'P')
+			{
+				map->player_y = column;
+				map->player_x = row;
 				map->init_pos++;
+			}
 			row++;
 		}
 		column++;
 	}
 	if (map->coins < 1 || map->exit != 1 || map->init_pos != 1)
 		ft_error(7);
+	map->coins_copy = map->coins;
+	map->exit_copy = map->exit;
 }
 
 //?Check del border
@@ -125,11 +131,4 @@ int	check_border(t_map *map)
 		column++;
 	}
 	return (1);
-}
-
-void	check_path(t_map *map)
-{
-	int	player;
-	int	exit;
-
 }
