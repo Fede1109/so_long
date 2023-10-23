@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:42:19 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 17:52:13 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/23 18:41:30 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@
 # define COLOR_GREEN "\033[0;32m"
 # define COLOR_BLUE "\033[0;36m"
 # define TEST "./sprites/Down.xpm"
+# define COIN "./sprites/coin.xpm"
+# define WALL "./sprites/wall.xpm"
+# define FLOOR "./sprites/floor.xpm"
+# define PLAYER "./sprites/player.xpm"
 # define A 0
 # define S 1
 # define D 2
