@@ -6,11 +6,11 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:33:15 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 16:54:36 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/23 17:45:19 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//TODO: Asignación movimientos (arriba, abajo, dcha, izq)
+//*: Asignación movimientos (arriba, abajo, dcha, izq)
 #include "../include/so_long.h"
 
 void    go_up(t_map *map)
@@ -21,7 +21,7 @@ void    go_up(t_map *map)
     map->map[map->player_y][map->player_x] = '0';
     map->player_y = map->player_y - 1;
     map->movements++;
-    ft_printf("\n%dMovimientos:", map->movements);
+    ft_printf("\nMovimientos: %d", map->movements);
 }
 void    go_down(t_map *map)
 {    
@@ -31,7 +31,7 @@ void    go_down(t_map *map)
     map->map[map->player_y][map->player_x] = '0';
     map->player_y = map->player_y + 1;
     map->movements++;
-    ft_printf("\n%dMovimientos:", map->movements);
+    ft_printf("\nMovimientos: %d", map->movements);
     
 }
 void    go_right(t_map *map)
@@ -42,7 +42,7 @@ void    go_right(t_map *map)
     map->map[map->player_y][map->player_x] = '0';
     map->player_x = map->player_x + 1;
     map->movements++;
-    ft_printf("\n%dMovimientos:", map->movements);
+    ft_printf("\nMovimientos: %d", map->movements);
 }
 void    go_left(t_map *map)
 {
@@ -52,7 +52,7 @@ void    go_left(t_map *map)
     map->map[map->player_y][map->player_x] = '0';
     map->player_x = map->player_x + 1;
     map->movements++;
-    ft_printf("\n%dMovimientos:", map->movements);
+    ft_printf("\nMovimientos: %d", map->movements);
 }
 
 int detect_key(int key_code, t_map *map)

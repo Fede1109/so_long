@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:42:19 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 16:43:59 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/23 17:52:13 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,13 @@ typedef struct s_map
     void    *mlx;
     void    *mlx_win;
     int     img_width;
-    int     img_height;
-    void    *test;
+    int     img_height;    
     int     movements;
+    void    *player_img;
+    void    *coins_img;
+    void    *walls_img;
+    void    *exit_img;
+    void    *floor_img;
             
 }t_map;
 
@@ -69,6 +73,7 @@ void	flood_fill(t_map *map, int column, int row);
 void    check_path(t_map *map);
 int	    end_game();
 int     detect_key(int key_code, t_map *map);
+void    draw_map(t_map *map);
 void    ft_error(int n);
 
 #endif
