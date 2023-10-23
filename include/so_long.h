@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:42:19 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 14:38:41 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:23:39 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,15 @@
 # include "../minilibx_opengl/mlx.h"
 # define COLOR_RED "\033[0;31m"
 # define TEST "./sprites/Down.xpm"
+# define A 0
+# define S 1
+# define D 2
+# define W 13
+# define ESC 53
+# define LEFT 123
+# define RIGHT 124
+# define DOWN 125
+# define UP 126
 
 typedef struct s_map
 {
