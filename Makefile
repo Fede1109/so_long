@@ -6,12 +6,12 @@
 #    By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:58:34 by fdiaz-gu          #+#    #+#              #
-#    Updated: 2023/10/21 18:19:58 by fdiaz-gu         ###   ########.fr        #
+#    Updated: 2023/10/23 16:22:27 by fdiaz-gu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC_DIR = ./src
-SRC = so_long.c utils.c read_map.c check_map.c
+SRC = so_long.c utils.c read_map.c check_map.c check_path.c hooks.c
 
 OBJS = $(addprefix $(SRC_DIR)/, $(SRC:.c=.o))
 CC = gcc
