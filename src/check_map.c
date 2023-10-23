@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 16:30:47 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:13:50 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void	check_rectangle(t_map *map)
 }
 
 //?Check si se complen las condiciones de los elementos
+//TODO: DIVIDIR EN 2 FUNCIONES
 void	check_elements_number(t_map *map)
 {
 	int		column;

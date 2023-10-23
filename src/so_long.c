@@ -6,16 +6,19 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:31:54 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 19:00:40 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:17:53 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
+
+//TODO: VER XQ NO SE MUEVE LA IMAGEN DEL PERSONAJE NI DESAPARECEN LAS MONEDAS
+
 void    map_init(t_map *map)
 {
     map->mlx = mlx_init();
-    map->mlx_win = mlx_new_window(map->mlx, 1200, 1080,
+    map->mlx_win = mlx_new_window(map->mlx, 1400, 1080,
     "So_Long");
     map->player_img = mlx_xpm_file_to_image(map->mlx, PLAYER, &map->img_width, &map->img_height);
     if(map->player_img == NULL)

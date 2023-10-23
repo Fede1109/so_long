@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:33:15 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 17:45:19 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:19:10 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,10 @@ int detect_key(int key_code, t_map *map)
         || (key_code == D && map->map[map->player_y][map->player_x + 1] == 'E')
         || (key_code == S && map->map[map->player_y + 1][map->player_x] == 'E')
         || (key_code == W && map->map[map->player_y - 1][map->player_x] == 'E')))
+        {
         ft_printf("%s%s\n", COLOR_GREEN, "CONGRATULATIONS! You win.");
-
+        end_game();
+        }
     if (key_code == A && map->map[map->player_y][map->player_x - 1] != 'E'
         && key_code == A && map->map[map->player_y][map->player_x - 1] != '1')
         go_left(map);
