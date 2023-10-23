@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:31:54 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 14:41:55 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:56:28 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,7 @@ int main(int argc, char **argv)
     check_rectangle(&map);
     check_border(&map);
     flood_fill(&map, map.player_y, map.player_x);
-    ft_printf("%s\n", map.map_copy[0]);
-	ft_printf("%s\n", map.map_copy[1]);
-	ft_printf("%s\n", map.map_copy[2]);
-	ft_printf("%s\n", map.map_copy[3]);
-	ft_printf("%s\n", map.map_copy[4]);
     check_path(&map);
-    // map_init(&map);
+    map_init(&map);
     return (0);
 }
