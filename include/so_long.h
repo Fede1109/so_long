@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:42:19 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/22 19:56:17 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/23 14:38:41 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,14 @@
 # include "../libft/get_next_line.h"
 # include "../minilibx_opengl/mlx.h"
 # define COLOR_RED "\033[0;31m"
-
-# define PL "./sprites/Down.xpm"
+# define TEST "./sprites/Down.xpm"
 
 typedef struct s_map
 {
     int     coins;
+    int     coins_copy;
     int     exit;
+    int     exit_copy;
     int     n_players;
     int     player_x;
     int     player_y;
@@ -37,7 +38,12 @@ typedef struct s_map
     char    **map_copy;
     size_t     map_width;
     size_t     map_height;
-    int     init_pos;    
+    int     init_pos;   
+    void    *mlx;
+    void    *mlx_win;
+    int     img_width;
+    int     img_height;
+    void    *test; 
             
 }t_map;
 
@@ -47,6 +53,8 @@ int     check_char_map(t_map *map);
 void	check_rectangle(t_map *map);
 void	check_elements_number(t_map *map);
 int     check_border(t_map *map);
+void	flood_fill(t_map *map, int column, int row);
+void    check_path(t_map *map);
 void    ft_error(int n);
 
 #endif
