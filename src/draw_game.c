@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 16:56:21 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 18:29:22 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/23 18:57:13 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ void    draw_elements(int column, int row, t_map *map)
     if (map->map[column][row] == '1')
         mlx_put_image_to_window(map->mlx, map->mlx_win, map->walls_img, row * 45, column * 45);
     if (map->map[column][row] == 'P')
-        mlx_put_image_to_window(map->mlx, map->player_img, map->player_img, row * 45, column * 45);
+        mlx_put_image_to_window(map->mlx, map->mlx_win, map->player_img, row * 45, column * 45);
     if (map->map[column][row] == 'C')
-        mlx_put_image_to_window(map->mlx, map->coins_img, map->coins_img, row * 45, column * 45);
+        mlx_put_image_to_window(map->mlx, map->mlx_win, map->coins_img, row * 45, column * 45);
     if (map->map[column][row] == 'E')
-        mlx_put_image_to_window(map->mlx, map->exit_img, map->exit_img, row * 45, column * 45);    
+        mlx_put_image_to_window(map->mlx, map->mlx_win, map->exit_img, row * 45, column * 45);    
 }
 
 void    draw_map(t_map *map)

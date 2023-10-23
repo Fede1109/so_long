@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:31:54 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 18:47:56 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:00:40 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void    map_init(t_map *map)
     map->walls_img = mlx_xpm_file_to_image(map->mlx, WALL, &map->img_width, &map->img_height);
     if(map->walls_img == NULL)
         ft_error(10);    
-    map->exit_img = mlx_xpm_file_to_image(map->mlx, TEST, &map->img_width, &map->img_height);
+    map->exit_img = mlx_xpm_file_to_image(map->mlx, EXIT, &map->img_width, &map->img_height);
     if(map->exit_img == NULL)
         ft_error(10);    
     map->floor_img = mlx_xpm_file_to_image(map->mlx, FLOOR, &map->img_width, &map->img_height);
