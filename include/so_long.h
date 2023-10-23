@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:42:19 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 15:57:54 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/23 16:43:59 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ void	check_elements_number(t_map *map);
 int     check_border(t_map *map);
 void	flood_fill(t_map *map, int column, int row);
 void    check_path(t_map *map);
-void    end_game();
+int	    end_game();
+int     detect_key(int key_code, t_map *map);
 void    ft_error(int n);
 
 #endif
