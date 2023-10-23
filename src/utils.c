@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 17:14:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 15:58:23 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/23 16:43:51 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ void    ft_error(int n)
     exit(n);
 }
 
-void    end_game()
-{
-    exit(0);
+int	end_game()
+{    
+	exit (0);
+	return (0);
 }

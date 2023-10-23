@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 15:12:31 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/23 16:30:47 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  TODO: Checkear mapa
  * SER RECTANGULAR 
  * CERRADO/RODEADO DE MUROS
- ! COMPROBAR QUE HAYA UN CAMINO VÁLIDO
+ * COMPROBAR QUE HAYA UN CAMINO VÁLIDO
 	* Checkear Elementos
 	* UNA SOLA SALIDA
 	* UNA SOLA POS INICIAL
@@ -82,6 +82,7 @@ void	check_elements_number(t_map *map)
 	column = 0;
 	aux_map = map->map;
 	map->exit = 0;
+	map->coins = 0;
 	while (aux_map[column])
 	{
 		row = 0;
