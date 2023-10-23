@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:42:19 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 15:23:39 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:57:54 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # include "../libft/get_next_line.h"
 # include "../minilibx_opengl/mlx.h"
 # define COLOR_RED "\033[0;31m"
+# define COLOR_GREEN "\033[0;32m"
+# define COLOR_BLUE "\033[0;36m"
 # define TEST "./sprites/Down.xpm"
 # define A 0
 # define S 1
@@ -52,7 +54,8 @@ typedef struct s_map
     void    *mlx_win;
     int     img_width;
     int     img_height;
-    void    *test; 
+    void    *test;
+    int     movements;
             
 }t_map;
 
@@ -64,6 +67,7 @@ void	check_elements_number(t_map *map);
 int     check_border(t_map *map);
 void	flood_fill(t_map *map, int column, int row);
 void    check_path(t_map *map);
+void    end_game();
 void    ft_error(int n);
 
 #endif
