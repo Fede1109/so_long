@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:31:54 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/24 11:48:21 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/24 15:16:04 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	main(int argc, char **argv)
 	map_init(&map);
 	draw_map(&map);
 	mlx_key_hook(map.mlx_win, detect_key, &map);
-	// mlx_loop_hook(map.mlx, , &map);
+	// mlx_hook(map.mlx_win, 17, 0, end_game, &map);
 	mlx_loop(map.mlx);
 	return (0);
 }
