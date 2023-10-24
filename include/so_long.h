@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:42:19 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 19:00:31 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/24 10:50:20 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,7 @@ typedef struct s_map
     char    **map;
     char    **map_copy;
     size_t     map_width;
-    size_t     map_height;
-    int     init_pos;   
+    size_t     map_height;    
     void    *mlx;
     void    *mlx_win;
     int     img_width;
