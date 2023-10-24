@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/24 10:51:59 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/24 11:33:16 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,13 +73,13 @@ void	check_rectangle(t_map *map)
 }
 
 //?Check si se complen las condiciones de los elementos
-//TODO: DIVIDIR EN 2 FUNCIONES
-void	check_elements_number(t_map *map)
+//*: DIVIDIR EN 2 FUNCIONES
+void	count_elements(t_map *map)
 {
 	int		column;
 	int		row;	
 
-	column = 0;	
+	column = 0;
 	while (map->map[column])
 	{
 		row = 0;
@@ -87,8 +87,8 @@ void	check_elements_number(t_map *map)
 		{
 			if (map->map[column][row] == 'C')
 				map->coins++;
-			if (map->map[column][row] == 'E')			
-				map->exit++;			
+			if (map->map[column][row] == 'E')
+				map->exit++;
 			if (map->map[column][row] == 'P')
 			{
 				map->player_y = column;
@@ -99,35 +99,37 @@ void	check_elements_number(t_map *map)
 		}
 		column++;
 	}
-	//TODO:METER A OTRA FUNCIÓN
-	if (map->coins < 1 || map->exit != 1 || map->n_players != 1)
-		ft_error(7);
-	map->coins_copy = map->coins;
-	map->exit_copy = map->exit;
+	check_elements_number(map);
 }
 
 //?Check del border
 int	check_border(t_map *map)
 {
 	int		column;
-	int		row;
-	char	**aux_map;
-	
+	int		row;	
+
 	column = 0;
-	aux_map = map->map;
-	while (aux_map[column])
+	while (map->map[column])
 	{
 		row = 0;
-		while (aux_map[column][row])
+		while (map->map[column][row])
 		{
-			if (aux_map[0][row] != '1'
-				|| aux_map[column][0] != '1'
-				|| aux_map[map->map_width - 1][row] != '1'
-				|| aux_map[column][map->map_height - 1] != '1')
+			if (map->map[0][row] != '1'
+				|| map->map[column][0] != '1'
+				|| map->map[map->map_width - 1][row] != '1'
+				|| map->map[column][map->map_height - 1] != '1')
 				ft_error(6);
 			row++;
 		}
 		column++;
 	}
 	return (1);
+}
+
+void	check_elements_number(t_map *map)
+{
+	if (map->coins < 1 || map->exit != 1 || map->n_players != 1)
+		ft_error(7);
+	map->coins_copy = map->coins;
+	map->exit_copy = map->exit;
 }
