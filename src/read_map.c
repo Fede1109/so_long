@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:54:59 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 14:34:07 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/24 10:44:44 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	read_map(char *argv, t_map *map)
 	free(map_str);
 }
 
-// TODO: CONTADOR DE MOVIMIENTOS
+// *: CONTADOR DE MOVIMIENTOS
 
-// TODO: ASIGNACION TECLAS(movimiento y esc para salir)
+// *: ASIGNACION TECLAS(movimiento y esc para salir)
 
 // *: CONTADOR TOKENS

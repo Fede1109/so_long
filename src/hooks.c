@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:33:15 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 19:19:10 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/24 10:44:23 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int detect_key(int key_code, t_map *map)
         || (key_code == W && map->map[map->player_y - 1][map->player_x] == 'E')))
         {
         ft_printf("%s%s\n", COLOR_GREEN, "CONGRATULATIONS! You win.");
+        //TODO FUNCION PARA GANAR CUANDO RECOJA TODAS LAS MONEDAS
         end_game();
         }
     if (key_code == A && map->map[map->player_y][map->player_x - 1] != 'E'

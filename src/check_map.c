@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 19:13:50 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/24 10:51:59 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,33 +77,30 @@ void	check_rectangle(t_map *map)
 void	check_elements_number(t_map *map)
 {
 	int		column;
-	int		row;
-	char	**aux_map;
+	int		row;	
 
-	column = 0;
-	aux_map = map->map;
-	map->exit = 0;
-	map->coins = 0;
-	while (aux_map[column])
+	column = 0;	
+	while (map->map[column])
 	{
 		row = 0;
-		while (aux_map[column][row])
+		while (map->map[column][row])
 		{
-			if (aux_map[column][row] == 'C')
+			if (map->map[column][row] == 'C')
 				map->coins++;
-			if (aux_map[column][row] == 'E')			
+			if (map->map[column][row] == 'E')			
 				map->exit++;			
-			if (aux_map[column][row] == 'P')
+			if (map->map[column][row] == 'P')
 			{
 				map->player_y = column;
 				map->player_x = row;
-				map->init_pos++;
+				map->n_players++;
 			}
 			row++;
 		}
 		column++;
 	}
-	if (map->coins < 1 || map->exit != 1 || map->init_pos != 1)
+	//TODO:METER A OTRA FUNCIÓN
+	if (map->coins < 1 || map->exit != 1 || map->n_players != 1)
 		ft_error(7);
 	map->coins_copy = map->coins;
 	map->exit_copy = map->exit;

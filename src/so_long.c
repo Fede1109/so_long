@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:31:54 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/23 19:17:53 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/24 10:47:11 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 
 
 //TODO: VER XQ NO SE MUEVE LA IMAGEN DEL PERSONAJE NI DESAPARECEN LAS MONEDAS
+//TODO: FUCNION PARA INICIALIZAR VARIABLES A 0 (MONEDAS, nº player, nº salidas)
+
+void    init_variables(t_map *map)
+{
+    map->coins = 0;
+    map->exit = 0;
+    map->n_players = 0;
+    map->movements = 0;
+}
 
 void    map_init(t_map *map)
 {
