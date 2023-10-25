@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:42:19 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/24 13:22:52 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/25 13:54:06 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,9 @@ typedef struct s_map
 {
     int     coins;
     int     coins_copy;
+    int     n_players;
     int     exit;
     int     exit_copy;
-    int     n_players;
-    int     player_x;
-    int     player_y;
     char    **map;
     char    **map_copy;
     size_t     map_width;
@@ -53,30 +51,48 @@ typedef struct s_map
     void    *mlx_win;
     int     img_width;
     int     img_height;    
+    // int     movements;
+    // void    *player_img;
+    // void    *coins_img;
+    // void    *walls_img;
+    // void    *exit_img;
+    // void    *floor_img;
+    
+}t_map;
+
+typedef struct s_player
+{
+    int     player_x;
+    int     player_y;
     int     movements;
+}t_player;
+
+typedef struct s_img
+{
     void    *player_img;
     void    *coins_img;
     void    *walls_img;
     void    *exit_img;
     void    *floor_img;
-    
-}t_map;
+}t_img;
+
+
 
 void    check_arguments(int argc, char *argv);
 void    read_map(char *argv, t_map *map);
-void    init_variables(t_map *map);
+void    init_variables(t_map *map, t_player *player);
 int     check_char_map(t_map *map);
 void	check_rectangle(t_map *map);
-void	count_elements(t_map *map);
+void	count_elements(t_map *map, t_player *player);
 void	check_elements_number(t_map *map);
 int     check_border(t_map *map);
 void	flood_fill(t_map *map, int column, int row);
 void    check_path(t_map *map);
 int	    end_game();
 int	    win_game(t_map *map);
-int     detect_key(int key_code, t_map *map);
+int		detect_key(int key_code, t_map *map, t_player *player);
 void    coin_counter(t_map *map);
-void    draw_map(t_map *map);
+void	draw_map(t_map *map, t_img *images);
 void    ft_error(int n);
 
 #endif
