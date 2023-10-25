@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:31:54 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/25 15:25:44 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:28:26 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	map_init(t_map *map, t_img *images)
 	if (images->floor_img == NULL)
 		ft_error(10);
 }
-//TODO: REVISAR SEGFAUL AL MOVERSE
+
 int	main(int argc, char **argv)
 {
 	t_map		map;
@@ -62,8 +62,6 @@ int	main(int argc, char **argv)
 	check_rectangle(&map);
 	check_border(&map);
 	flood_fill(&map, map.player_y, map.player_x);
-	printf("%i\nCOLUMN", map.player_y);
-	printf("%i\nrow", map.player_x);
 	check_path(&map);
 	map_init(&map, &images);
 	draw_map(&map, &images);
