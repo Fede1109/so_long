@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 17:14:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/24 13:24:24 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/25 13:35:57 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,5 @@ void	coin_counter(t_map *map)
 	map->coins--;
 	if (map->coins == 0)
 		ft_printf("%c%s%s%c", '\n', COLOR_GREEN,
-			"All coins collected! Find the exit", '\n');
+			"You found all the coins! Find the exit", '\n');
 }
