@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:33:15 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/25 15:28:37 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/25 17:18:31 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	go_up(t_map *map)
 	map->player_y = map->player_y - 1;
 	map->movements++;
 	ft_printf("\nMovimientos: %d", map->movements);
+	draw_map(map);
 }
 
 void	go_down(t_map *map)
@@ -33,6 +34,7 @@ void	go_down(t_map *map)
 	map->player_y = map->player_y + 1;
 	map->movements++;
 	ft_printf("\nMovimientos: %d", map->movements);
+	draw_map(map);
 }
 
 void	go_right(t_map *map)
@@ -44,6 +46,7 @@ void	go_right(t_map *map)
 	map->player_x = map->player_x + 1;
 	map->movements++;
 	ft_printf("\nMovimientos: %d", map->movements);
+	draw_map(map);
 }
 
 void	go_left(t_map *map)
@@ -55,11 +58,12 @@ void	go_left(t_map *map)
 	map->player_x = map->player_x + 1;
 	map->movements++;
 	ft_printf("\nMovimientos: %d", map->movements);
+	draw_map(map);
 }
 
 //* FUNCION PARA GANAR CUANDO RECOJA TODAS LAS MONEDAS				
 int	detect_key(int key_code, t_map *map)
-{	
+{
 	if (key_code == ESC)
 		end_game();
 	if (map->coins == 0 && ((key_code == A

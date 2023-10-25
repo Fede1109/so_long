@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:42:19 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/25 15:25:41 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/25 17:13:14 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,31 +54,12 @@ typedef struct s_map
     int     player_x;
     int     player_y;   
     int     movements;
-    // int     movements;
-    // void    *player_img;
-    // void    *coins_img;
-    // void    *walls_img;
-    // void    *exit_img;
-    // void    *floor_img;
-    
-}t_map;
-
-// typedef struct s_player
-// {
-//     // int     player_x;
-//     // int     player_y;
-// }t_player;
-
-typedef struct s_img
-{
     void    *player_img;
     void    *coins_img;
     void    *walls_img;
     void    *exit_img;
     void    *floor_img;
-}t_img;
-
-
+}t_map;
 
 void    check_arguments(int argc, char *argv);
 void    read_map(char *argv, t_map *map);
@@ -94,7 +75,7 @@ int	    end_game();
 int	    win_game(t_map *map);
 int		detect_key(int key_code, t_map *map);
 void    coin_counter(t_map *map);
-void	draw_map(t_map *map, t_img *images);
+void	draw_map(t_map *map);
 void    ft_error(int n);
 
 #endif
