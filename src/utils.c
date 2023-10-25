@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 17:14:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/25 13:35:57 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:32:21 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,12 @@ int	end_game(void)
 int	win_game(t_map *map)
 {
 	if (map->coins == 0)
+	{
 		ft_printf("%s%s\n", COLOR_GREEN, "CONGRATULATIONS! You win.");
+		exit (0);
+	}
 	else
 		ft_printf("%s%s\n", COLOR_BLUE, "You didn`t find all the coins!");
-	exit (0);
 	return (0);
 }
 

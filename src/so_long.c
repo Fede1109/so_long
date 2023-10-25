@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:31:54 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/25 15:28:26 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/25 16:44:40 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	init_variables(t_map *map)
 void	map_init(t_map *map, t_img *images)
 {
 	map->mlx = mlx_init();
-	map->mlx_win = mlx_new_window(map->mlx, 1400, 1080,
-			"So_Long");
+	map->mlx_win = mlx_new_window(map->mlx, map->map_height * 56,
+			map->map_width * 56, "So_Long");
 	images->player_img = mlx_xpm_file_to_image(map->mlx, PLAYER,
 			&map->img_width, &map->img_height);
 	if (images->player_img == NULL)
@@ -65,8 +65,7 @@ int	main(int argc, char **argv)
 	check_path(&map);
 	map_init(&map, &images);
 	draw_map(&map, &images);
-	mlx_key_hook(map.mlx_win, detect_key, &map);
-	// mlx_hook(map.mlx_win, 17, 0, end_game, &map);
+	mlx_key_hook(map.mlx_win, detect_key, &map);	
 	mlx_loop(map.mlx);
 	return (0);
 }
