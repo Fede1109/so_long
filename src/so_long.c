@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:31:54 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/25 15:16:20 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:25:44 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 //TODO: VER XQ NO SE MUEVE LA IMAGEN DEL PERSONAJE NI DESAPARECEN LAS MONEDAS
 //*: FUCNION PARA INICIALIZAR VARIABLES A 0 (MONEDAS, nº player, nº salidas)
 
-void	init_variables(t_map *map, t_player *player)
+void	init_variables(t_map *map)
 {
 	map->coins = 0;
 	map->exit = 0;
 	map->n_players = 0;
-	player->movements = 0;
+	map->movements = 0;
 }
 
 void	map_init(t_map *map, t_img *images)
@@ -53,16 +53,17 @@ int	main(int argc, char **argv)
 {
 	t_map		map;
 	t_img		images;
-	t_player	player;
 	
 	check_arguments(argc, argv[1]);
 	read_map(argv[1], &map);
-	init_variables(&map, &player);
+	init_variables(&map);
 	check_char_map(&map);
-	count_elements(&map, &player);
+	count_elements(&map);
 	check_rectangle(&map);
 	check_border(&map);
-	flood_fill(&map, player.player_y, player.player_x);
+	flood_fill(&map, map.player_y, map.player_x);
+	printf("%i\nCOLUMN", map.player_y);
+	printf("%i\nrow", map.player_x);
 	check_path(&map);
 	map_init(&map, &images);
 	draw_map(&map, &images);

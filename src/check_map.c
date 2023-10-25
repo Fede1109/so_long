@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/25 14:04:11 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:26:42 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	check_rectangle(t_map *map)
 
 //?Check si se complen las condiciones de los elementos
 //*: DIVIDIR EN 2 FUNCIONES
-void	count_elements(t_map *map, t_player *player)
+void	count_elements(t_map *map)
 {
 	int		column;
 	int		row;	
@@ -91,8 +91,8 @@ void	count_elements(t_map *map, t_player *player)
 				map->exit++;
 			if (map->map[column][row] == 'P')
 			{
-				player->player_y = column;
-				player->player_x = row;
+				map->player_y = column;
+				map->player_x = row;
 				map->n_players++;
 			}
 			row++;
@@ -100,8 +100,6 @@ void	count_elements(t_map *map, t_player *player)
 		column++;
 	}
 	check_elements_number(map);
-	printf("%i\nCOLUMN", player->player_y);
-	printf("%i\nrow", player->player_x);
 }
 
 //?Check del border
