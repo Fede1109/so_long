@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/25 15:26:42 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/28 16:40:56 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	count_elements(t_map *map)
 			if (map->map[column][row] == 'C')
 				map->coins++;
 			if (map->map[column][row] == 'E')
-				map->exit++;
+				assign_exit(column, row, map);
 			if (map->map[column][row] == 'P')
 			{
 				map->player_y = column;
@@ -128,8 +128,11 @@ int	check_border(t_map *map)
 
 void	check_elements_number(t_map *map)
 {
+	map->coins_copy = map->coins;
+	map->coins_copy_2 = map->coins;
+	map->exit_copy = map->exit;
+	map->exit_copy_2 = map->exit;
+	map->player_copy = map->n_players;
 	if (map->coins < 1 || map->exit != 1 || map->n_players != 1)
 		ft_error(7);
-	map->coins_copy = map->coins;
-	map->exit_copy = map->exit;
 }

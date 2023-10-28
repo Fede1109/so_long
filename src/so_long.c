@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:31:54 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/25 17:13:55 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/28 17:37:02 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,12 @@ void	init_variables(t_map *map)
 	map->n_players = 0;
 	map->movements = 0;
 }
-
+void	assign_exit(int column, int row, t_map *map)
+{
+	map->exit_x = row;
+	map->exit_y = column;
+	map->exit++;
+}
 void	map_init(t_map *map)
 {
 	map->mlx = mlx_init();
@@ -60,11 +65,14 @@ int	main(int argc, char **argv)
 	count_elements(&map);
 	check_rectangle(&map);
 	check_border(&map);
-	flood_fill(&map, map.player_y, map.player_x);
-	check_path(&map);
+	flood_fill_from_player(&map, map.player_y, map.player_x);
+	check_path_from_player(&map);
+	flood_fill_from_exit(&map, map.exit_y, map.exit_x);
+	check_path_from_exit(&map);
 	map_init(&map);
 	draw_map(&map);
 	mlx_key_hook(map.mlx_win, detect_key, &map);	
+	mlx_hook(map.mlx_win, 17, 0, end_game, &map);
 	mlx_loop(map.mlx);
 	return (0);
 }

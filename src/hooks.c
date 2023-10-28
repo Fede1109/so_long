@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:33:15 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/25 17:18:31 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/27 11:44:21 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	go_up(t_map *map)
 	map->map[map->player_y][map->player_x] = '0';
 	map->player_y = map->player_y - 1;
 	map->movements++;
-	ft_printf("\nMovimientos: %d", map->movements);
+	ft_printf("Movimientos: %d\n", map->movements);
 	draw_map(map);
 }
 
@@ -33,7 +33,7 @@ void	go_down(t_map *map)
 	map->map[map->player_y][map->player_x] = '0';
 	map->player_y = map->player_y + 1;
 	map->movements++;
-	ft_printf("\nMovimientos: %d", map->movements);
+	ft_printf("Movimientos: %d\n", map->movements);
 	draw_map(map);
 }
 
@@ -45,7 +45,7 @@ void	go_right(t_map *map)
 	map->map[map->player_y][map->player_x] = '0';
 	map->player_x = map->player_x + 1;
 	map->movements++;
-	ft_printf("\nMovimientos: %d", map->movements);
+	ft_printf("Movimientos: %d\n", map->movements);
 	draw_map(map);
 }
 
@@ -55,9 +55,9 @@ void	go_left(t_map *map)
 		coin_counter(map);
 	map->map[map->player_y][map->player_x - 1] = 'P';
 	map->map[map->player_y][map->player_x] = '0';
-	map->player_x = map->player_x + 1;
+	map->player_x = map->player_x - 1;
 	map->movements++;
-	ft_printf("\nMovimientos: %d", map->movements);
+	ft_printf("Movimientos: %d\n", map->movements);
 	draw_map(map);
 }
 
