@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:42:19 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/28 17:26:59 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/28 19:14:19 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,7 @@ int     check_border(t_map *map);
 void	assign_exit(int column, int row, t_map *map);
 void	flood_fill_from_player(t_map *map, int column, int row);
 void	flood_fill_from_exit(t_map *map, int column, int row);
-void	check_path_from_player(t_map *map);
-void	check_path_from_exit(t_map *map);
+void	check_path(t_map *map);
 int	    end_game();
 int	    win_game(t_map *map);
 int		detect_key(int key_code, t_map *map);
