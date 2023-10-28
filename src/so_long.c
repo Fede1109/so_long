@@ -6,13 +6,11 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:31:54 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/28 17:37:02 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/28 19:13:46 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
-//TODO: VER XQ NO SE MUEVE LA IMAGEN DEL PERSONAJE NI DESAPARECEN LAS MONEDAS
-//*: FUCNION PARA INICIALIZAR VARIABLES A 0 (MONEDAS, nº player, nº salidas)
 
 void	init_variables(t_map *map)
 {
@@ -65,8 +63,7 @@ int	main(int argc, char **argv)
 	count_elements(&map);
 	check_rectangle(&map);
 	check_border(&map);
-	flood_fill_from_player(&map, map.player_y, map.player_x);
-	check_path_from_player(&map);
+	flood_fill_from_player(&map, map.player_y, map.player_x);	
 	flood_fill_from_exit(&map, map.exit_y, map.exit_x);
 	check_path_from_exit(&map);
 	map_init(&map);

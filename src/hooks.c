@@ -6,11 +6,11 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:33:15 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/27 11:44:21 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/28 19:10:33 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//*: Asignación movimientos (arriba, abajo, dcha, izq)
+
 #include "../include/so_long.h"
 
 void	go_up(t_map *map)
@@ -61,7 +61,6 @@ void	go_left(t_map *map)
 	draw_map(map);
 }
 
-//* FUNCION PARA GANAR CUANDO RECOJA TODAS LAS MONEDAS				
 int	detect_key(int key_code, t_map *map)
 {
 	if (key_code == ESC)

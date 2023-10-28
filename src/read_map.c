@@ -6,13 +6,12 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:54:59 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/28 16:40:20 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/28 19:10:22 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-// ?Guardar mapa
 void	read_map(char *argv, t_map *map)
 {
 	int		fd;
@@ -39,9 +38,3 @@ void	read_map(char *argv, t_map *map)
 	map->map_copy_2 = ft_split(map_str, '\n');
 	free(map_str);
 }
-
-// *: CONTADOR DE MOVIMIENTOS
-
-// *: ASIGNACION TECLAS(movimiento y esc para salir)
-
-// *: CONTADOR TOKENS

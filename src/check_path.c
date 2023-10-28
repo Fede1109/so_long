@@ -6,21 +6,15 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 14:33:39 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/28 17:36:58 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/28 19:14:15 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-void	check_path_from_exit(t_map *map)
+void	check_path(t_map *map)
 {
-	if (map->coins_copy_2 > 0)
-		ft_error(9);
-}
-
-void	check_path_from_player(t_map *map)
-{
-	if (map->coins_copy > 0 )
+	if (map->coins_copy > 0 || map->coins_copy_2 > 0)
 		ft_error(9);
 }
 

@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 17:14:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/25 15:32:21 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/28 19:10:10 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	check_arguments(int argc, char *argv)
 {
 	size_t	len;
 
-		//*: Mostrar mensaje de error
 	if (argc != 2)
 		ft_error(8);
 	else
@@ -24,12 +23,11 @@ void	check_arguments(int argc, char *argv)
 		len = ft_strlen(argv);
 		if (len < 4)
 			ft_error(1);
-		if ((ft_strncmp(".ber", argv + (len - 4), 4)))
-			//*: verificar que sea archivo .ber
+		if ((ft_strncmp(".ber", argv + (len - 4), 4)))			
 			ft_error(1);
 	}
 }
-//TODO: Acabar función error
+//TODO: FUNCION LIBERAR MAPA
 
 void	ft_error(int n)
 {
