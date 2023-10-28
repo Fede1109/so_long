@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:42:19 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/28 19:19:32 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/28 20:07:18 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@
 # define COLOR_RED "\033[0;31m"
 # define COLOR_GREEN "\033[0;32m"
 # define COLOR_BLUE "\033[0;36m"
-# define PLAYER "./sprites/player.xpm"
+# define PLAYER "./sprites/down.xpm"
+# define LEFT "./sprites/down.xpm"
+# define RIGHT "./sprites/down.xpm"
+# define UP "./sprites/down.xpm"
 # define COIN "./sprites/coin.xpm"
 # define WALL "./sprites/wall.xpm"
 # define FLOOR "./sprites/floor.xpm"
