@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 14:33:39 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/28 19:14:15 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/28 19:21:42 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,12 @@ void	check_path(t_map *map)
 void	flood_fill_from_player(t_map *map, int column, int row)
 {	
 	if (map->map_copy[column][row] != '1')
-	{
-		// if (map->map_copy[column][row] == 'E')		
-		// 	map->exit_copy--;		
+	{		
 		if (map->map_copy[column][row] == 'C')
-			map->coins_copy--;				
-		map->map_copy[column][row] = '1';		
+			map->coins_copy--;
+		map->map_copy[column][row] = '1';
 		if (map->map_copy[column][row + 1] != '1'
-			&&  map->map_copy[column][row + 1] != 'E')
+			&& map->map_copy[column][row + 1] != 'E')
 			flood_fill_from_player(map, column, row + 1);
 		if (map->map_copy[column][row - 1] != '1'
 			&& map->map_copy[column][row - 1] != 'E')
@@ -42,12 +40,12 @@ void	flood_fill_from_player(t_map *map, int column, int row)
 	}
 }
 
-void	flood_fill_from_exit(t_map *map, int column , int row)
+void	flood_fill_from_exit(t_map *map, int column, int row)
 {
 	if (map->map_copy_2[column][row] != '1')
 	{
 		if (map->map_copy_2[column][row] == 'C')
-			map->coins_copy_2--;		
+			map->coins_copy_2--;
 		map->map_copy_2[column][row] = '1';
 		if (map->map_copy_2[column][row + 1] != '1')
 			flood_fill_from_exit(map, column, row + 1);
@@ -59,6 +57,3 @@ void	flood_fill_from_exit(t_map *map, int column , int row)
 			flood_fill_from_exit(map, column - 1, row);
 	}	
 }
-
-
-
