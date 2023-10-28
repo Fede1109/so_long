@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:42:19 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/25 17:13:14 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/28 17:26:59 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,17 @@ typedef struct s_map
 {
     int     coins;
     int     coins_copy;
+    int     coins_copy_2;
     int     n_players;
+    int     player_copy;
     int     exit;
     int     exit_copy;
+    int     exit_copy_2;
+    int     exit_x;
+    int     exit_y;
     char    **map;
     char    **map_copy;
+    char    **map_copy_2;
     size_t     map_width;
     size_t     map_height;    
     void    *mlx;
@@ -52,7 +58,7 @@ typedef struct s_map
     int     img_width;
     int     img_height;
     int     player_x;
-    int     player_y;   
+    int     player_y;
     int     movements;
     void    *player_img;
     void    *coins_img;
@@ -69,8 +75,11 @@ void	check_rectangle(t_map *map);
 void	count_elements(t_map *map);
 void	check_elements_number(t_map *map);
 int     check_border(t_map *map);
-void	flood_fill(t_map *map, int column, int row);
-void    check_path(t_map *map);
+void	assign_exit(int column, int row, t_map *map);
+void	flood_fill_from_player(t_map *map, int column, int row);
+void	flood_fill_from_exit(t_map *map, int column, int row);
+void	check_path_from_player(t_map *map);
+void	check_path_from_exit(t_map *map);
 int	    end_game();
 int	    win_game(t_map *map);
 int		detect_key(int key_code, t_map *map);
