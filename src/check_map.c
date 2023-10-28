@@ -6,26 +6,12 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/28 16:40:56 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/28 19:16:18 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-/*
- TODO: Checkear mapa
- * SER RECTANGULAR 
- * CERRADO/RODEADO DE MUROS
- * COMPROBAR QUE HAYA UN CAMINO VÁLIDO
-	* Checkear Elementos
-	* UNA SOLA SALIDA
-	* UNA SOLA POS INICIAL
-	* AL MENOS 1 COLECCIONABLE
-	*: Checkear bordes
-}
-*/
-
-//? CHECK ELEMENTOS. 0, 1, C, E, P
 int	check_char_map(t_map *map)
 {
 	char	**aux_map;
@@ -50,7 +36,6 @@ int	check_char_map(t_map *map)
 	return (1);
 }
 
-//?Check si es rectángulo
 void	check_rectangle(t_map *map)
 {
 	size_t	columns;
@@ -72,8 +57,6 @@ void	check_rectangle(t_map *map)
 	}
 }
 
-//?Check si se complen las condiciones de los elementos
-//*: DIVIDIR EN 2 FUNCIONES
 void	count_elements(t_map *map)
 {
 	int		column;
