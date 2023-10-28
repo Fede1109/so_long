@@ -6,7 +6,7 @@
 #    By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:58:34 by fdiaz-gu          #+#    #+#              #
-#    Updated: 2023/10/23 17:19:15 by fdiaz-gu         ###   ########.fr        #
+#    Updated: 2023/10/27 17:31:56 by fdiaz-gu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRC = so_long.c utils.c read_map.c check_map.c check_path.c hooks.c draw_game.c
 
 OBJS = $(addprefix $(SRC_DIR)/, $(SRC:.c=.o))
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g
 AR = ar
 ARFLAGS = rcs
 RM = rm -rf
