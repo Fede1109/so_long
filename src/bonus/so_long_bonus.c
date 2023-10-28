@@ -6,11 +6,11 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:31:54 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/28 19:45:26 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/28 20:23:28 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../../include/so_long.h"
 
 /**
  * 
