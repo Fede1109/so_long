@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/28 19:16:18 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/28 20:34:30 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ void	count_elements(t_map *map)
 	check_elements_number(map);
 }
 
-//?Check del border
 int	check_border(t_map *map)
 {
 	int		column;
