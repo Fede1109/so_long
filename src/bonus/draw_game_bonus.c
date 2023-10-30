@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 16:56:21 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/30 11:12:24 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/30 15:02:28 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ void	draw_elements(int column, int row, t_map *map)
 			row * 56, column * 56);
 	if (map->map[column][row] == 'E')
 		mlx_put_image_to_window(map->mlx, map->mlx_win, map->exit_img,
+			row * 56, column * 56);
+	if (map->map[column][row] == 'X')
+		mlx_put_image_to_window(map->mlx, map->mlx_win, map->enemy_img,
 			row * 56, column * 56);
 }
 
