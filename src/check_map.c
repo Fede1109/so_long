@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/30 11:12:58 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/30 11:18:46 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,25 +62,23 @@ void	count_elements(t_map *map)
 	int		column;
 	int		row;	
 
-	column = 0;
-	while (map->map[column])
+	column = -1;
+	while (map->map[++column])
 	{
-		row = 0;
-		while (map->map[column][row])
+		row = -1;
+		while (map->map[column][++row])
 		{
 			if (map->map[column][row] == 'C')
 				map->coins++;
-			if (map->map[column][row] == 'E')
+			else if (map->map[column][row] == 'E')
 				assign_exit(column, row, map);
-			if (map->map[column][row] == 'P')
+			else if (map->map[column][row] == 'P')
 			{
 				map->player_y = column;
 				map->player_x = row;
 				map->n_players++;
-			}
-			row++;
-		}
-		column++;
+			}			
+		}		
 	}
 	check_elements_number(map);
 }
