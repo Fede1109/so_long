@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:31:54 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/30 16:53:42 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/30 18:51:42 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	map_init(t_map *map)
 	if (map->player_img == NULL || map->coins_img == NULL
 		|| map->walls_img == NULL || map->exit_img == NULL
 		|| map->floor_img == NULL || map->enemy_img == NULL)
-    		ft_error(10);
+		ft_error(10);
 }
 
 int	main(int argc, char **argv)
