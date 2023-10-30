@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/30 11:26:00 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/30 14:57:25 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,6 @@ void	check_elements_number(t_map *map)
 	map->coins_copy_2 = map->coins;
 	map->player_copy = map->n_players;
 	if (map->coins < 1 || map->exit != 1 || map->n_players != 1
-		|| map->enemies > 0)
+		|| map->enemies < 1)
 		ft_error(7);
 }
