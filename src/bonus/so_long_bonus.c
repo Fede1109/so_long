@@ -6,23 +6,11 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:31:54 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/30 11:31:47 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/30 16:44:45 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long_bonus.h"
-
-/**
- * 
- * TODO: BUSCAR SPRITES PARA MOVIMIENTO
- * TODO: AGREGAR CAMBIO DE SPRITE PARA SIMULAR MOVIMIENTO
- * TODO: AÑADIR CONTADO DE MOV EN PANTALLA JUEGO(mlx_string_put Puts a string on the location (x,y) in the given window.)
- * TODO: BUSCAR SPRITE ENEMIGO
- * TODO: AÑADIR ENEMIGOS (definir caracter para mapa)
- * TODO: AÑADIR MUERTE CUANDO TOCAS ENEMIGO
- * TODO:
- * 
-	*/
 
 void	init_variables(t_map *map)
 {
@@ -76,7 +64,7 @@ int	main(int argc, char **argv)
 	flood_fill_from_exit(&map, map.exit_y, map.exit_x);
 	check_path(&map);
 	map_init(&map);
-	draw_map(&map);
+	draw_map(&map);	
 	mlx_key_hook(map.mlx_win, detect_key, &map);
 	mlx_hook(map.mlx_win, 17, 0, end_game, &map);
 	mlx_loop(map.mlx);
