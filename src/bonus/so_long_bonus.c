@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:31:54 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/30 16:44:45 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/30 16:53:42 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,21 @@ void	map_init(t_map *map)
 	map->mlx_win = mlx_new_window(map->mlx, map->map_height * 56,
 			map->map_width * 56, "So_Long");
 	map->player_img = mlx_xpm_file_to_image(map->mlx, PLAYER,
-			&map->img_width, &map->img_height);	
+			&map->img_width, &map->img_height);
 	map->coins_img = mlx_xpm_file_to_image(map->mlx, COIN,
-			&map->img_width, &map->img_height);	
+			&map->img_width, &map->img_height);
 	map->walls_img = mlx_xpm_file_to_image(map->mlx, WALL,
-			&map->img_width, &map->img_height);	
+			&map->img_width, &map->img_height);
 	map->exit_img = mlx_xpm_file_to_image(map->mlx, EXIT,
-			&map->img_width, &map->img_height);	
+			&map->img_width, &map->img_height);
 	map->floor_img = mlx_xpm_file_to_image(map->mlx, FLOOR,
 			&map->img_width, &map->img_height);
 	map->enemy_img = mlx_xpm_file_to_image(map->mlx, ENEMY,
 			&map->img_width, &map->img_height);
-	if (map->player_img == NULL || map->coins_img == NULL || map->walls_img == NULL
-		|| map->exit_img == NULL || map->floor_img == NULL || map->enemy_img == NULL)
-        ft_error(10);
+	if (map->player_img == NULL || map->coins_img == NULL
+		|| map->walls_img == NULL || map->exit_img == NULL
+		|| map->floor_img == NULL || map->enemy_img == NULL)
+    		ft_error(10);
 }
 
 int	main(int argc, char **argv)
@@ -64,7 +65,7 @@ int	main(int argc, char **argv)
 	flood_fill_from_exit(&map, map.exit_y, map.exit_x);
 	check_path(&map);
 	map_init(&map);
-	draw_map(&map);	
+	draw_map(&map);
 	mlx_key_hook(map.mlx_win, detect_key, &map);
 	mlx_hook(map.mlx_win, 17, 0, end_game, &map);
 	mlx_loop(map.mlx);
