@@ -6,12 +6,12 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:42:19 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/30 16:33:15 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/30 18:52:38 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 # include <fcntl.h>
 # include <unistd.h>
@@ -88,7 +88,7 @@ void	movements_on_screen(t_map *map);
 void	coin_counter(t_map *map);
 void	lose_game(void);
 void	draw_map(t_map *map);
-void    move_sprit(t_map *map);
+void	move_sprit(t_map *map);
 void	ft_error(int n);
 
 #endif
