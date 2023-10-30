@@ -6,11 +6,11 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 16:56:21 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/28 20:23:18 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/30 11:12:24 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
+#include "../../include/so_long_bonus.h"
 
 void	draw_floor(t_map *map)
 {
