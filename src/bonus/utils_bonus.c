@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 17:14:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/30 11:12:07 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/30 16:40:29 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,6 @@ int	win_game(t_map *map)
 		ft_printf("%s%s\n", COLOR_GREEN, "CONGRATULATIONS! You win.");
 		exit (0);
 	}
-	else
-		ft_printf("%s%s\n", COLOR_BLUE, "You didn`t find all the coins!");
 	return (0);
 }
 
