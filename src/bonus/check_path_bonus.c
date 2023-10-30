@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 14:33:39 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/30 11:12:29 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/30 16:42:53 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	check_path(t_map *map)
 
 void	flood_fill_from_player(t_map *map, int column, int row)
 {	
-	if (map->map_copy[column][row] != '1')
+	if (map->map_copy[column][row] != '1'
+		&& map->map_copy_2[column][row] != 'X')
 	{		
 		if (map->map_copy[column][row] == 'C')
 			map->coins_copy--;
@@ -42,7 +43,8 @@ void	flood_fill_from_player(t_map *map, int column, int row)
 
 void	flood_fill_from_exit(t_map *map, int column, int row)
 {
-	if (map->map_copy_2[column][row] != '1')
+	if (map->map_copy_2[column][row] != '1'
+		&& map->map_copy_2[column][row] != 'X')
 	{
 		if (map->map_copy_2[column][row] == 'C')
 			map->coins_copy_2--;
