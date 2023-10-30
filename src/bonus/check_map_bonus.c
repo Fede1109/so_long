@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/30 11:12:49 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/30 11:26:00 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	check_char_map(t_map *map)
 		{
 			if (aux_map[column][row] != '0' && aux_map[column][row] != '1' &&
 				aux_map[column][row] != 'C' && aux_map[column][row] != 'E' &&
-				aux_map[column][row] != 'P')
+				aux_map[column][row] != 'P' && aux_map[column][row] != 'X')
 				ft_error(4);
 			row++;
 		}
@@ -62,25 +62,25 @@ void	count_elements(t_map *map)
 	int		column;
 	int		row;	
 
-	column = 0;
-	while (map->map[column])
+	column = -1;
+	while (map->map[++column])
 	{
-		row = 0;
-		while (map->map[column][row])
+		row = -1;
+		while (map->map[column][++row])
 		{
 			if (map->map[column][row] == 'C')
 				map->coins++;
-			if (map->map[column][row] == 'E')
+			else if (map->map[column][row] == 'E')
 				assign_exit(column, row, map);
-			if (map->map[column][row] == 'P')
+			else if (map->map[column][row] == 'X')
+				map->enemies++;
+			else if (map->map[column][row] == 'P')
 			{
 				map->player_y = column;
 				map->player_x = row;
 				map->n_players++;
-			}
-			row++;
-		}
-		column++;
+			}			
+		}		
 	}
 	check_elements_number(map);
 }
@@ -113,6 +113,7 @@ void	check_elements_number(t_map *map)
 	map->coins_copy = map->coins;
 	map->coins_copy_2 = map->coins;
 	map->player_copy = map->n_players;
-	if (map->coins < 1 || map->exit != 1 || map->n_players != 1)
+	if (map->coins < 1 || map->exit != 1 || map->n_players != 1
+		|| map->enemies > 0)
 		ft_error(7);
 }
