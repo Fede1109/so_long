@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:42:19 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/30 11:11:22 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:15:04 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_map
 	int			exit;		
 	int			exit_x;
 	int			exit_y;
+	int			status;
 	char		**map;
 	char		**map_copy;
 	char		**map_copy_2;
@@ -65,7 +66,7 @@ typedef struct s_map
 	void		*floor_img;
 }t_map;
 
-void	check_arguments(int argc, char *argv);
+void	check_arguments(int argc, char *argv, t_map *map);
 void	read_map(char *argv, t_map *map);
 void	init_variables(t_map *map);
 int		check_char_map(t_map *map);
@@ -79,9 +80,10 @@ void	flood_fill_from_exit(t_map *map, int column, int row);
 void	check_path(t_map *map);
 int		end_game(void);
 int		win_game(t_map *map);
+void	free_map(t_map *map);
 int		detect_key(int key_code, t_map *map);
 void	coin_counter(t_map *map);
 void	draw_map(t_map *map);
-void	ft_error(int n);
+void	ft_error(int n, t_map *map);
 
 #endif
