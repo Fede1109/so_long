@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/30 17:28:36 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:29:15 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	check_char_map(t_map *map)
 			if (aux_map[column][row] != '0' && aux_map[column][row] != '1' &&
 				aux_map[column][row] != 'C' && aux_map[column][row] != 'E' &&
 				aux_map[column][row] != 'P' && aux_map[column][row] != 'X')
-				ft_error(4);
+				ft_error(4, map);
 			row++;
 		}
 		column++;
@@ -52,7 +52,7 @@ void	check_rectangle(t_map *map)
 	while (map->map_width > columns)
 	{
 		if (map->map_height != ft_strlen(map->map[columns]))
-			ft_error(5);
+			ft_error(5, map);
 		columns++;
 	}
 }
@@ -100,7 +100,7 @@ int	check_border(t_map *map)
 				|| map->map[column][0] != '1'
 				|| map->map[map->map_width - 1][row] != '1'
 				|| map->map[column][map->map_height - 1] != '1')
-				ft_error(6);
+				ft_error(6, map);
 			row++;
 		}
 		column++;
@@ -114,5 +114,5 @@ void	check_elements_number(t_map *map)
 	map->coins_copy_2 = map->coins;
 	map->player_copy = map->n_players;
 	if (map->coins < 1 || map->exit != 1 || map->n_players != 1)
-		ft_error(7);
+		ft_error(7, map);
 }

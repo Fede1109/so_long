@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 14:33:39 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/28 19:21:42 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:15:01 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	check_path(t_map *map)
 {
 	if (map->coins_copy > 0 || map->coins_copy_2 > 0)
-		ft_error(9);
+		ft_error(9, map);
 }
 
 void	flood_fill_from_player(t_map *map, int column, int row)

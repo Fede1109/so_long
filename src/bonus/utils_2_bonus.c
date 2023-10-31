@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:33:14 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/30 18:51:25 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:25:11 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	move_sprit(t_map *map)
 	map->player_img = mlx_xpm_file_to_image(map->mlx, map->p_direction,
 			&map->img_width, &map->img_height);
 	if (map->player_img == NULL)
-		ft_error(10);
+		ft_error(10, map);
 }
 
 void	movements_on_screen(t_map *map)

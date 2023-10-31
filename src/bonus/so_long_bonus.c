@@ -6,11 +6,27 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:31:54 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/30 18:51:42 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:25:09 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long_bonus.h"
+
+void	free_map(t_map *map)
+{
+	int	i;
+
+	i = 0;
+	if (map->map)
+	{
+		while (map->map[i])
+		{
+			free(map->map[i]);
+			i++;
+		}
+		free(map->map);
+	}
+}
 
 void	init_variables(t_map *map)
 {
@@ -47,14 +63,14 @@ void	map_init(t_map *map)
 	if (map->player_img == NULL || map->coins_img == NULL
 		|| map->walls_img == NULL || map->exit_img == NULL
 		|| map->floor_img == NULL || map->enemy_img == NULL)
-		ft_error(10);
+		ft_error(10, map);
 }
 
 int	main(int argc, char **argv)
 {
 	t_map		map;
 
-	check_arguments(argc, argv[1]);
+	check_arguments(argc, argv[1], &map);
 	read_map(argv[1], &map);
 	init_variables(&map);
 	check_char_map(&map);

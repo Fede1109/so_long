@@ -6,11 +6,27 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:31:54 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/28 19:42:48 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:13:52 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+void	free_map(t_map *map)
+{
+	int	i;
+
+	i = 0;
+	if (map->map)
+	{
+		while (map->map[i])
+		{
+			free(map->map[i]);
+			i++;
+		}
+		free(map->map);
+	}
+}
 
 void	init_variables(t_map *map)
 {
@@ -34,31 +50,26 @@ void	map_init(t_map *map)
 			map->map_width * 56, "So_Long");
 	map->player_img = mlx_xpm_file_to_image(map->mlx, PLAYER,
 			&map->img_width, &map->img_height);
-	if (map->player_img == NULL)
-		ft_error(10);
 	map->coins_img = mlx_xpm_file_to_image(map->mlx, COIN,
 			&map->img_width, &map->img_height);
-	if (map->coins_img == NULL)
-		ft_error(10);
 	map->walls_img = mlx_xpm_file_to_image(map->mlx, WALL,
 			&map->img_width, &map->img_height);
-	if (map->walls_img == NULL)
-		ft_error(10);
 	map->exit_img = mlx_xpm_file_to_image(map->mlx, EXIT,
 			&map->img_width, &map->img_height);
-	if (map->exit_img == NULL)
-		ft_error(10);
 	map->floor_img = mlx_xpm_file_to_image(map->mlx, FLOOR,
 			&map->img_width, &map->img_height);
-	if (map->floor_img == NULL)
-		ft_error(10);
+	if (map->player_img == NULL || map->coins_img == NULL
+		|| map->walls_img == NULL || map->exit_img == NULL
+		|| map->floor_img == NULL)
+		ft_error(10, map);
+
 }
 
 int	main(int argc, char **argv)
 {
 	t_map		map;
 
-	check_arguments(argc, argv[1]);
+	check_arguments(argc, argv[1], &map);
 	read_map(argv[1], &map);
 	init_variables(&map);
 	check_char_map(&map);
