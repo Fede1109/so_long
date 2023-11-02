@@ -6,11 +6,18 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:54:59 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/31 13:25:16 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/02 13:37:26 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+void	fill_map(t_map *map, char *str)
+{
+	map->map = ft_split(str, '\n');
+	map->map_copy = ft_split(str, '\n');
+	map->map_copy_2 = ft_split(str, '\n');
+}
 
 void	read_map(char *argv, t_map *map)
 {
@@ -40,9 +47,3 @@ void	read_map(char *argv, t_map *map)
 	free(map_str);
 }
 
-void	fill_map(t_map *map, char *str)
-{
-	map->map = ft_split(str, '\n');
-	map->map_copy = ft_split(str, '\n');
-	map->map_copy_2 = ft_split(str, '\n');
-}

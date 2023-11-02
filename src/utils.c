@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 17:14:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/31 13:12:57 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:33:18 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	check_arguments(int argc, char *argv, t_map *map)
 			ft_error(1, map);
 	}
 }
-//TODO: FUNCION LIBERAR MAPA
 
 void	ft_error(int n, t_map *map)
 {
