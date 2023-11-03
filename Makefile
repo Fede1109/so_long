@@ -6,7 +6,7 @@
 #    By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:58:34 by fdiaz-gu          #+#    #+#              #
-#    Updated: 2023/10/30 16:37:56 by fdiaz-gu         ###   ########.fr        #
+#    Updated: 2023/11/03 10:41:04 by fdiaz-gu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ BONUS = so_long_bonus.c utils_bonus.c utils_2_bonus.c read_map_bonus.c hooks_bon
 OBJS = $(addprefix $(SRC_DIR)/, $(SRC:.c=.o))
 BONUS_OBJS = $(addprefix $(BONUS_DIR)/, $(BONUS:.c=.o))
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g
+CFLAGS = -Wall -Werror -Wextra #-fsanitize=address -g3
 AR = ar
 ARFLAGS = rcs
 RM = rm -rf
