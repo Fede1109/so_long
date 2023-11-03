@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 17:14:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/31 13:33:18 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/03 12:05:00 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 void	check_arguments(int argc, char *argv, t_map *map)
 {
 	size_t	len;
-
-	map->status = 1;
+	
 	if (argc != 2)
 		ft_error(8, map);
 	else
@@ -25,7 +24,7 @@ void	check_arguments(int argc, char *argv, t_map *map)
 		if (len < 4)
 			ft_error(1, map);
 		if ((ft_strncmp(".ber", argv + (len - 4), 4)))
-			ft_error(1, map);
+			ft_error(2, map);
 	}
 }
 
@@ -34,7 +33,7 @@ void	ft_error(int n, t_map *map)
 	if (n == 1)
 		ft_printf("%sError\nNo such file or directory! \n", COLOR_RED);
 	else if (n == 2)
-		ft_printf("%sError\nUsage: ./so_long <filename>.ber \n", COLOR_RED);
+		ft_printf("%sError\nUsage: ./so_long maps/<filename>.ber \n", COLOR_RED);
 	else if (n == 3)
 		ft_printf("%sError\nTry create one valid map! \n", COLOR_RED);
 	else if (n == 4)

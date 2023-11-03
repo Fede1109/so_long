@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:31:54 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/31 13:31:01 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/03 12:02:41 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int	main(int argc, char **argv)
 
 	check_arguments(argc, argv[1], &map);
 	read_map(argv[1], &map);
+	map.status = 1;
 	init_variables(&map);
 	check_char_map(&map);
 	count_elements(&map);
