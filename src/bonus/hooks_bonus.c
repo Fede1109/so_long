@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:33:15 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/30 17:25:33 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/13 11:54:24 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	go_up(t_map *map)
 	map->movements++;
 	map->p_direction = "./sprites/up.xpm";
 	move_sprit(map);
-	ft_printf("Movimientos: %d\n", map->movements);
+	ft_printf("Movimientos: %s%d\n", COLOR_NORMAL, map->movements);
 	draw_map(map);
 	movements_on_screen(map);
 }
@@ -41,7 +41,7 @@ void	go_down(t_map *map)
 	map->movements++;
 	map->p_direction = "./sprites/down.xpm";
 	move_sprit(map);
-	ft_printf("Movimientos: %d\n", map->movements);
+	ft_printf("Movimientos: %s%d\n", COLOR_NORMAL, map->movements);
 	draw_map(map);
 	movements_on_screen(map);
 }
@@ -58,7 +58,7 @@ void	go_right(t_map *map)
 	map->movements++;
 	map->p_direction = "./sprites/right.xpm";
 	move_sprit(map);
-	ft_printf("Movimientos: %d\n", map->movements);
+	ft_printf("Movimientos: %s%d\n", COLOR_NORMAL, map->movements);
 	draw_map(map);
 	movements_on_screen(map);
 }
@@ -75,7 +75,7 @@ void	go_left(t_map *map)
 	map->movements++;
 	map->p_direction = "./sprites/left.xpm";
 	move_sprit(map);
-	ft_printf("Movimientos: %d\n", map->movements);
+	ft_printf("Movimientos: %s%d\n", COLOR_NORMAL, map->movements);
 	draw_map(map);
 	movements_on_screen(map);
 }
