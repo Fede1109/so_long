@@ -6,12 +6,12 @@
 #    By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:58:34 by fdiaz-gu          #+#    #+#              #
-#    Updated: 2023/11/03 10:41:04 by fdiaz-gu         ###   ########.fr        #
+#    Updated: 2023/11/03 15:43:29 by fdiaz-gu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC_DIR = ./src
-BONUS_DIR = ./src/bonus/
+BONUS_DIR = ./src/bonus
 SRC = so_long.c utils.c read_map.c check_map.c check_path.c hooks.c draw_game.c
 BONUS = so_long_bonus.c utils_bonus.c utils_2_bonus.c read_map_bonus.c hooks_bonus.c draw_game_bonus.c check_path_bonus.c check_map_bonus.c
 
