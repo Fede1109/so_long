@@ -6,7 +6,7 @@
 #    By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:58:34 by fdiaz-gu          #+#    #+#              #
-#    Updated: 2023/11/13 11:25:06 by fdiaz-gu         ###   ########.fr        #
+#    Updated: 2023/11/13 11:37:58 by fdiaz-gu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,25 +30,23 @@ LIBFT_A = libft.a
 LIBFT = -L$(LIBFT_DIR) $(LIBFT_DIR)$(LIBFT_A)
 
 NAME = so_long
-MLX_PATH = minilibx_opengl/
-MINILIBX:= -L $(MLX_PATH) $(MLX_PATH)libmlx.a -lmlx -framework OpenGL -framework AppKit
+# MLX_PATH = minilibx_opengl/
+# MINILIBX:= -L $(MLX_PATH) $(MLX_PATH)libmlx.a -lmlx -framework OpenGL -framework AppKit
 
 all: $(NAME)
 	@echo " \033[36m[ OK ] | READY TO PLAY!\033[0m"
 
 .SILENT: $(OBJS)
-$(NAME): $(OBJS)
-	@make -C $(MLX_PATH)
+$(NAME): $(OBJS)	
 	@make bonus -C $(LIBFT_DIR)	
-	@gcc $(CFLAGS) $(OBJS) $(MINILIBX) $(LIBFT) -o $(NAME)	
+	@gcc $(CFLAGS) $(OBJS) $(LIBFT) -lmlx -framework OpenGL -framework AppKit -o $(NAME)	
 
 B = .
 
 .SILENT: $(BONUS_OBJS)
-$(B_NAME): $(BONUS_OBJS)	
-	@make -C $(MLX_PATH)	
+$(B_NAME): $(BONUS_OBJS)		
 	@make bonus -C $(LIBFT_DIR)	
-	@gcc $(CFLAGS) $(BONUS_OBJS) $(MINILIBX) $(LIBFT) -o $(B_NAME)	
+	@gcc $(CFLAGS) $(BONUS_OBJS)  $(LIBFT) -lmlx -framework OpenGL -framework AppKit -o $(B_NAME)	
 
 bonus: $(B)
 
