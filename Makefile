@@ -6,7 +6,7 @@
 #    By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:58:34 by fdiaz-gu          #+#    #+#              #
-#    Updated: 2023/11/13 11:45:18 by fdiaz-gu         ###   ########.fr        #
+#    Updated: 2023/11/13 11:46:17 by fdiaz-gu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,14 +34,12 @@ NAME = so_long
 all: $(NAME)
 	@echo " \033[36m[ OK ] | READY TO PLAY!\033[0m"
 
-.SILENT: $(OBJS)
 $(NAME): $(OBJS)	
 	@make bonus -C $(LIBFT_DIR)	
 	@gcc $(CFLAGS) $(OBJS) $(LIBFT) -lmlx -framework OpenGL -framework AppKit -o $(NAME)	
 
 B = .
 
-.SILENT: $(BONUS_OBJS)
 $(B_NAME): $(BONUS_OBJS)		
 	@make bonus -C $(LIBFT_DIR)	
 	@gcc $(CFLAGS) $(BONUS_OBJS)  $(LIBFT) -lmlx -framework OpenGL -framework AppKit -o $(B_NAME)	

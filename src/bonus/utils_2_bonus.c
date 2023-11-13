@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:33:14 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/10/31 13:25:11 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/13 11:47:21 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ void	movements_on_screen(t_map *map)
 
 	mov = ft_itoa(map->movements);
 	mlx_string_put(map->mlx, map->mlx_win, 10, 20, 0x000000, "Movements: ");
-	mlx_string_put(map->mlx, map->mlx_win, 90, 20, 0x000000, mov);
+	mlx_string_put(map->mlx, map->mlx_win, 110, 20, 0x000000, mov);
 	free(mov);
 }
