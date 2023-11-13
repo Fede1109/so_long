@@ -6,7 +6,7 @@
 #    By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:58:34 by fdiaz-gu          #+#    #+#              #
-#    Updated: 2023/11/13 11:37:58 by fdiaz-gu         ###   ########.fr        #
+#    Updated: 2023/11/13 11:45:18 by fdiaz-gu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,6 @@ LIBFT_A = libft.a
 LIBFT = -L$(LIBFT_DIR) $(LIBFT_DIR)$(LIBFT_A)
 
 NAME = so_long
-# MLX_PATH = minilibx_opengl/
-# MINILIBX:= -L $(MLX_PATH) $(MLX_PATH)libmlx.a -lmlx -framework OpenGL -framework AppKit
 
 all: $(NAME)
 	@echo " \033[36m[ OK ] | READY TO PLAY!\033[0m"
