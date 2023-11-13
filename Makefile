@@ -6,7 +6,7 @@
 #    By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:58:34 by fdiaz-gu          #+#    #+#              #
-#    Updated: 2023/11/03 15:43:29 by fdiaz-gu         ###   ########.fr        #
+#    Updated: 2023/11/13 11:21:05 by fdiaz-gu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,37 +33,26 @@ NAME = so_long
 MLX_PATH = minilibx_opengl/
 MINILIBX:= -L $(MLX_PATH) $(MLX_PATH)libmlx.a -lmlx -framework OpenGL -framework AppKit
 
-GREEN='\033[32m'
-GRAY='\033[2;37m'
-ORANGE='\033[33m'
-NONE='\033[0m'
-
 all: $(NAME)
 	@echo " \033[36m[ OK ] | READY TO PLAY!\033[0m"
 
 .SILENT: $(OBJS)
 $(NAME): $(OBJS)
-	@echo " \033[33m[ .. ] | Compiling minilibx..\033[0m"
 	@make -C $(MLX_PATH)
-	@echo $(CURSIVE)$(GREEN) " - Making libft..." $(NONE)
 	@make bonus -C $(LIBFT_DIR)
 	@echo $(CURSIVE)$(GREEN) " - Compiling $(NAME)" $(NONE)
-	@gcc $(CFLAGS) $(OBJS) $(MINILIBX) $(LIBFT) -o $(NAME)
-	@echo $(CURSIVE)$(GREEN) " - Compiled" $(NONE)
+	@gcc $(CFLAGS) $(OBJS) $(MINILIBX) $(LIBFT) -o $(NAME)	
 
 B = .
 
 .SILENT: $(BONUS_OBJS)
-$(B_NAME): $(BONUS_OBJS)
-	@echo " \033[33m[ .. ] | Compiling minilibx..\033[0m"
+$(B_NAME): $(BONUS_OBJS)	
 	@make -C $(MLX_PATH)
-	@echo $(CURSIVE)$(GREEN) " - Making libft..." $(NONE)
 	@sleep 3
 	@make bonus -C $(LIBFT_DIR)
 	@echo $(CURSIVE)$(GREEN) " - Compiling $(B_NAME)" $(NONE)
 	@gcc $(CFLAGS) $(BONUS_OBJS) $(MINILIBX) $(LIBFT) -o $(B_NAME)
-	@sleep 3
-	@echo $(CURSIVE)$(GREEN) " - Compiled" $(NONE)
+	@sleep 3	
 
 bonus: $(B)
 
@@ -72,14 +61,11 @@ $(B): $(B_NAME)
 clean:
 	$(RM) $(OBJS) $(BONUS_OBJS) $(LIBFT_A)
 
-fclean: clean
-	@echo $(CURSIVE)$(GREEN) " - Removing $(NAME)..." $(NONE)
+fclean: clean	
 	@$(RM) $(NAME) $(B_NAME) $(BONUS_OBJS) $(OBJS)
-	@make -C $(LIBFT_DIR) fclean
-	@echo $(CURSIVE)$(GREEN) " - Clean!" $(NONE)
+	@make -C $(LIBFT_DIR) fclean	
 
-re: fclean
-	@echo $(CURSIVE)$(ORANGE) " - Compiling again..." $(NONE)
+re: fclean	
 	@make all
 
 .PHONY: all  clean fclean re
