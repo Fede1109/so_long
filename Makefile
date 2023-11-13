@@ -6,7 +6,7 @@
 #    By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:58:34 by fdiaz-gu          #+#    #+#              #
-#    Updated: 2023/11/13 11:24:36 by fdiaz-gu         ###   ########.fr        #
+#    Updated: 2023/11/13 11:25:06 by fdiaz-gu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,11 +46,9 @@ B = .
 
 .SILENT: $(BONUS_OBJS)
 $(B_NAME): $(BONUS_OBJS)	
-	@make -C $(MLX_PATH)
-	@sleep 3
+	@make -C $(MLX_PATH)	
 	@make bonus -C $(LIBFT_DIR)	
-	@gcc $(CFLAGS) $(BONUS_OBJS) $(MINILIBX) $(LIBFT) -o $(B_NAME)
-	@sleep 3	
+	@gcc $(CFLAGS) $(BONUS_OBJS) $(MINILIBX) $(LIBFT) -o $(B_NAME)	
 
 bonus: $(B)
 
