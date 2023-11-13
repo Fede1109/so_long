@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:33:14 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/13 11:47:21 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/13 11:59:12 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	lose_game(void)
 {
-	ft_printf("%s%s", COLOR_RED, "YOU LOOSE!");
+	ft_printf("%s%s\n", COLOR_RED, "YOU LOOSE!");
 	end_game();
 }
 
