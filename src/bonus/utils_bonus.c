@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 17:14:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/03 12:15:35 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/13 11:21:45 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	check_arguments(int argc, char *argv, t_map *map)
 {
 	size_t	len;
-	
+
 	if (argc != 2)
 		ft_error(8, map);
 	else
