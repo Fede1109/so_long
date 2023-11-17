@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:31:54 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/13 11:21:24 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/17 10:40:01 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	map_init(t_map *map)
 int	main(int argc, char **argv)
 {
 	t_map		map;
-
+ 	
 	check_arguments(argc, argv[1], &map);
 	read_map(argv[1], &map);
 	init_variables(&map);
